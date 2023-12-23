@@ -39,7 +39,7 @@ function Blog({dataUsers, dataEvent, dataNews, dataImages, ideas}) {
     fetch('https://suitmedia-fauzansyahlan.vercel.app/api/blog')
       .then((response) => response.json())
       .then((data) => {
-        console.log('Fetched data:', data);
+        
         setFilteredData(data); 
       })
       .catch((error) => {
