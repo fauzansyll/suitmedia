@@ -24,13 +24,13 @@ export default function Header(){
 
       if (visible) {
         gsap.to(navbarRef.current, {
-          duration: 0.3,
+          duration: .5,
           opacity: 1,
           y: 0,
         });
       } else {
         gsap.to(navbarRef.current, {
-          duration: 0.3,
+          duration: 0.5,
           opacity: 0,
           y: '-100%',
         });
