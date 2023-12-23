@@ -31,7 +31,7 @@ function Blog({dataUsers, dataEvent, dataNews, dataImages, ideas}) {
   }, [dataImages, sortBy, perPage, currentPage]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/blog')
+    fetch('https://suitmedia-fauzansyahlan.vercel.app/api/blog')
       .then((response) => response.json())
       .then((data) => {
         console.log('Fetched data:', data); // Log fetched data
@@ -110,7 +110,7 @@ function Blog({dataUsers, dataEvent, dataNews, dataImages, ideas}) {
   )
 }
 export async function getStaticProps() {
-  const res1 = await fetch('http://localhost:3000/api/blog')
+  const res1 = await fetch('https://suitmedia-fauzansyahlan.vercel.app/api/blog')
   const dataImages = await res1.json()
   return {
     props: { dataImages },
