@@ -13,8 +13,8 @@ function Blog({dataUsers, dataEvent, dataNews, dataImages, ideas}) {
   const postsPerPage = perPage;
   useEffect(() => {
     if (dataImages && dataImages.length > 0) {
-      // Filter, sort, paginate data based on sortBy, perPage, and currentPage values
-      let sortedData = [...dataImages]; // Assuming dataImages is an array of blog objects
+      
+      let sortedData = [...dataImages]; 
 
       if (sortBy === 'oldest') {
         sortedData.sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -34,11 +34,11 @@ function Blog({dataUsers, dataEvent, dataNews, dataImages, ideas}) {
     fetch('https://suitmedia-fauzansyahlan.vercel.app/api/blog')
       .then((response) => response.json())
       .then((data) => {
-        console.log('Fetched data:', data); // Log fetched data
-        setFilteredData(data); // Update state with fetched data
+        console.log('Fetched data:', data);
+        setFilteredData(data); 
       })
       .catch((error) => {
-        console.error('Error fetching data:', error); // Log any errors
+        console.error('Error fetching data:', error); 
       });
       
   }, []);
@@ -90,7 +90,7 @@ function Blog({dataUsers, dataEvent, dataNews, dataImages, ideas}) {
             </div>
             </div>
           ))}
-        {/* React Paginate component */}
+        
         
       </div>
       <ReactPaginate

@@ -1,9 +1,9 @@
 @use '../mixin.scss' as mixin;
 
 .main {
-  height: 100vh; // Set a height for the parallax container
+  height: 100vh; 
   overflow: hidden;
-  position: relative; // Add position relative to the container
+  position: relative; 
   
   h1 {
     position: absolute;
@@ -22,7 +22,7 @@
 }
   
   .parallaxImage {
-    position: absolute; // Use absolute positioning for the parallax effect
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
