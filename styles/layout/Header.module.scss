@@ -1,0 +1,36 @@
+@use '../mixin.scss' as mixin;
+
+.main{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    height:100px;
+    z-index: 10000;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 120px;
+    background-color: mixin.$orange;
+    color: mixin.$white;
+    .logo{
+
+    }
+    .links{
+        display: flex;
+        gap: 30px;
+        font-size: 18px;
+
+        p{
+            position: relative;
+        }
+        
+        p.active::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px; /* Ukuran garis bawah */
+            background-color: blue; /* Warna garis bawah */
+            bottom: -3px; /* Jarak antara teks dan garis bawah */
+          }
+    }
+}

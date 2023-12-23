@@ -4,10 +4,9 @@ import Main from '@/components/main/Main'
 import Header from '@/components/layout/Header'
 import gsap from "gsap";
 
-
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Work() {
   return (
     <main>
       <Header/>
