@@ -7,13 +7,6 @@ export default function Main(){
     return(
         <div className={`${style.main}`}>
           <h1>Ideas</h1>
-            <Image
-            src={'/bg.jpg'}
-            width={100}
-            height={100}
-            alt='Banner'
-            className={style.parallaxImage}
-            />
         </div>
     )
 }
