@@ -56,6 +56,10 @@ function Blog({dataUsers, dataEvent, dataNews, dataImages, ideas}) {
       <div className={`${style.blog}`} >
       <div className={`${style.controls}`}>
         <div>
+        <div className={`${style.showing}`}>
+          Showing {currentPage * postsPerPage + 1}-
+          {Math.min((currentPage + 1) * postsPerPage, filteredData.length)} of {filteredData.length}
+        </div>
           <label htmlFor="sort">Sort by:</label>
           <select id="sort" value={sortBy} onChange={handleSortChange}>
             <option value="latest">Latest</option>
