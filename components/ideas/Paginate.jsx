@@ -13,19 +13,24 @@ function Blog({dataUsers, dataEvent, dataNews, dataImages, ideas}) {
   const postsPerPage = perPage;
   useEffect(() => {
     if (dataImages && dataImages.length > 0) {
+      let sortedData = [...dataImages];
+  
       
-      let sortedData = [...dataImages]; 
-
+      const indices = sortedData.map((_, index) => index);
+  
       if (sortBy === 'oldest') {
         sortedData.sort((a, b) => new Date(a.date) - new Date(b.date));
       } else {
         sortedData.sort((a, b) => new Date(b.date) - new Date(a.date));
       }
-
+  
+      
+      const rearrangedData = indices.map(index => sortedData[index]);
+  
       const indexOfLastPost = currentPage * perPage;
       const indexOfFirstPost = indexOfLastPost - perPage;
-      const currentPosts = sortedData.slice(indexOfFirstPost, indexOfLastPost);
-
+      const currentPosts = rearrangedData.slice(indexOfFirstPost, indexOfLastPost);
+  
       setFilteredData(currentPosts);
     }
   }, [dataImages, sortBy, perPage, currentPage]);
