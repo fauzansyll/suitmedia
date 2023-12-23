@@ -1,96 +1,129 @@
 import style from '@/styles/idea/Paginate.module.scss'
 import axios from 'axios'
-import {useEffect, useState} from 'react'
+import Image from 'next/image'
+import {useEffect, useState, useRef} from 'react'
+import ReactPaginate from 'react-paginate';
 
-const ListPost= ({dataImages}) => {
-    const [posts, setPosts] = useState([]);
-    const [sortBy, setSortBy] = useState('latest');
-    const [perPage, setPerPage] = useState(10);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [ideas, setIdeas] = useState([]);
+function Blog({dataUsers, dataEvent, dataNews, dataImages, ideas}) {
+  
+  const [sortBy, setSortBy] = useState('latest');
+  const [perPage, setPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [filteredData, setFilteredData] = useState([]);
+  const postsPerPage = perPage;
+  useEffect(() => {
+    if (dataImages && dataImages.length > 0) {
+      // Filter, sort, paginate data based on sortBy, perPage, and currentPage values
+      let sortedData = [...dataImages]; // Assuming dataImages is an array of blog objects
 
-    console.log(dataImages)
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //       try {
-    //         const response = await axios.get('/api/blog.js', {
-    //             params: {
-    //                 'page[number]': 1,
-    //                 'page[size]': 10,
-    //                 append: ['small_image', 'medium_image'],
-    //                 sort: '-published_at',
-    //               },
-    //         });
-    //         setPosts(response.data); 
-    //       } catch (error) {
-    //         console.error('Error fetching data: ', error);
-    //       }
-    //     };
-    
-    //     fetchData();
-    //   }, []);
-
-      
-
-      const handleSortChange = (value) => {
-        setSortBy(value);
-      };
-    
-      const handlePerPageChange = (value) => {
-        setPerPage(value);
-      };
-    
-      const handlePageChange = (pageNumber) => {
-        setCurrentPage(pageNumber);
-      };
-    
-      let sortedPosts = [...posts];
       if (sortBy === 'oldest') {
-        sortedPosts = sortedPosts.reverse();
+        sortedData.sort((a, b) => new Date(a.date) - new Date(b.date));
+      } else {
+        sortedData.sort((a, b) => new Date(b.date) - new Date(a.date));
       }
-    
+
       const indexOfLastPost = currentPage * perPage;
       const indexOfFirstPost = indexOfLastPost - perPage;
-      const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
+      const currentPosts = sortedData.slice(indexOfFirstPost, indexOfLastPost);
 
-    return(
-        <div className={`${style.main}`}>
-            <div className={`${style.list}`}>
-                <select onChange={(e) => handleSortChange(e.target.value)}>
-                    <option value='newest'>Newest</option>
-                    <option value='oldest'>Oldest</option>
-                </select>
-                <select onChange={(e) => handlePerPageChange(e.target.value)}>
-                    <option value={10}>10</option>
-                    <option value={20}>20</option>
-                    <option value={50}>50</option>
-                </select>
-                {currentPosts.map((post) => (
-                    <div key={post.id} className="post-card">
-                    <img
-                        src={post.thumbnail}
-                        alt={post.title}
-                        loading="lazy"
-                        style={{ width: '100%', height: 'auto' }}
-                    />
-                    <h3 style={{ maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        {post.title}
-                    </h3>
-                    </div>
-                ))}
-            </div>
+      setFilteredData(currentPosts);
+    }
+  }, [dataImages, sortBy, perPage, currentPage]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api/blog')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Fetched data:', data); // Log fetched data
+        setFilteredData(data); // Update state with fetched data
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error); // Log any errors
+      });
+      
+  }, []);
+  const handlePageClick = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+  const handleSortChange = (e) => {
+    setSortBy(e.target.value);
+  };
+  const handlePerPageChange = (e) => {
+    setPerPage(Number(e.target.value));
+  };
+  
+  return (
+      <div className={`${style.blog}`} >
+      <div className={`${style.controls}`}>
+        <div>
+          <label htmlFor="sort">Sort by:</label>
+          <select id="sort" value={sortBy} onChange={handleSortChange}>
+            <option value="latest">Latest</option>
+            <option value="oldest">Oldest</option>
+          </select>
         </div>
-    )
+        <div>
+          <label htmlFor="perPage">Items per page:</label>
+          <select id="perPage" value={perPage} onChange={handlePerPageChange}>
+            <option value={10}>10</option>
+            <option value={20}>20</option>
+            <option value={50}>50</option>
+          </select>
+        </div>
+      </div>
+      <div className={`${style.paginate}`}>
+      {filteredData
+          .slice(currentPage * postsPerPage, (currentPage + 1) * postsPerPage)
+          .map((post) => (
+            <div key={post.id} className={`${style.postcard}`}>
+            <Image
+              src={post.urlImage}
+              width={300}
+              height={300}
+              alt="Post image"
+            />
+            <div className={`${style.desc}`}>
+              <h4>{post.date}</h4>
+              <h3 >
+                {post.title}
+              </h3>
+            </div>
+            </div>
+          ))}
+        {/* React Paginate component */}
+        
+      </div>
+      <ReactPaginate
+          previousLabel={'Previous'}
+          className={`${style.pagi}`}
+          nextLabel={'Next'}
+          breakLabel={'...'}
+          pageCount={Math.ceil(filteredData.length / postsPerPage)}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={10}
+          onPageChange={handlePageClick}
+          containerClassName={'pagination'}
+          activeClassName={'active'}
+        />
+      </div>
+    
+  )
+}
+export async function getStaticProps() {
+  const res1 = await fetch('http://localhost:3000/api/blog')
+  const dataImages = await res1.json()
+  return {
+    props: { dataImages },
+  };
 }
 
-export default ListPost;
+export async function getServerSideProps() {
+  const ideas = await getIdeas();
 
-export async function getStaticProps() {
-    const res1 = await fetch('http://localhost:3000/api/blog.js')
-    const dataImages = await res1.json()
-  
-    return {
-      props: { dataImages,},
-    };
-  }
+  return {
+    props: {
+      ideas,
+    },
+  };
+}
+export default Blog;

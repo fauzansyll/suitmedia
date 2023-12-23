@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useRouter } from 'next/router';
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({
@@ -12,6 +13,7 @@ ScrollTrigger.config({
 
 export default function Header(){
     const navbarRef = useRef(null);
+    const router = useRouter();
     
     const [prevScrollPos, setPrevScrollPos] = useState(0);
 
@@ -86,19 +88,21 @@ export default function Header(){
             <div className={`${style.links}`}>
             <p onClick={() => changeActivePage('work')} className={activePage === 'work' ? `${style.active}` : `` }
                 >
-                <Link href={'/work'}>Work</Link>
+                <Link onClick={() => router.push('/work')} href={'/work'}>Work</Link>
                 </p>
                 <p onClick={() => changeActivePage('about')} className={activePage === 'about' ? `${style.active}` : `` }
                 >
-                <Link href={'/about'}>About</Link>
+                <Link onClick={() => router.push('/about')} href={'/about'}>About</Link>
                 </p>
                 <p onClick={() => changeActivePage('services')} className={activePage === 'services' ? `${style.active}` : `` }
                 >
                 <Link href={'/services'}>Services</Link>
                 </p>
-                <p onClick={() => changeActivePage('ideas')} className={activePage === 'ideas' ? `${style.active}` : `` }
-                >
-                <Link href={'/ideas'}>Ideas</Link>
+                <p onClick={() => {
+                  changeActivePage('ideas');
+                  router.push('/ideas');
+                }} className={activePage === 'ideas' ? `${style.active}` : ``}>
+                  Ideas
                 </p>
                 <p onClick={() => changeActivePage('careers')} className={activePage === 'careers' ? `${style.active}` : `` }
                 >

@@ -6,6 +6,7 @@ export default function Main(){
 
     return(
         <div className={`${style.main}`}>
+          <h1>Ideas</h1>
             <Image
             src={'/bg.jpg'}
             width={100}

@@ -4,133 +4,133 @@ export default function blog(req,res){
     res.end(JSON.stringify([
         {
             urlImage: '/dummy.jpg',
-            title: 'as a title',
+            title: ' Latest Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           },
           {
             urlImage: '/dummy.jpg',
-            title: 'Something as a title',
+            title: 'Oldest Kenali Tingkatan Influencers berdasarkan Jumlah Followers dan strategi influncer Marketing yang tepat dan bagus',
             urlArticle: '/blog/1',
             date: '2 Maret 2023'
           }

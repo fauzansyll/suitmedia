@@ -11,8 +11,9 @@ export default function Ideas() {
   return (
     <main>
       <Header/>
-      <ListPost/>
       <Main/>
+      <ListPost/>
+
     </main>
   )
 }

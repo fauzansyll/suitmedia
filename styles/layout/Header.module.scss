@@ -21,6 +21,7 @@
 
         p{
             position: relative;
+            cursor: pointer;
         }
         
         p.active::after {
@@ -29,7 +30,7 @@
             position: absolute;
             width: 100%;
             height: 2px; /* Ukuran garis bawah */
-            background-color: blue; /* Warna garis bawah */
+            background-color: white; /* Warna garis bawah */
             bottom: -3px; /* Jarak antara teks dan garis bawah */
           }
     }

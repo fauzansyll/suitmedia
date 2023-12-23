@@ -1,7 +1,63 @@
 @use '../mixin.scss' as mixin;
 
 
-.main{
+.blog {
     background-color: azure;
     width: 100%;
-}
+    height: fit-content;
+    display: flex;
+    gap: 50px;
+    padding: 50px 120px;
+    flex-direction: column;
+    .controls{
+        width: 100%;
+        display: flex;
+        padding: 0 10px;
+        justify-content: space-between;
+        // justify-content: center;
+    }
+    .paginate {
+    //   padding: 0 120px;
+    
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+  
+      .postcard {
+        width: 300px;
+        height: fit-content;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        
+        text-overflow: ellipsis;
+        border-radius: 10px;
+        ;
+        .desc{
+            width: 100%;
+            padding: 10px 10px 10px 10px;
+            height: fit-content;
+            text-overflow: ellipsis;
+            h3 {
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            h4{
+              opacity: .7;
+            }
+        }
+      }
+    }
+  
+    .pagi {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
